@@ -95,8 +95,7 @@ Email:
 `admin@smartdesk.com`
 
 Password:
-
-`Admin@123`
+password
 
 ## Future Enhancements
 
