@@ -1,0 +1,6 @@
+package com.smartdesk.dao;
+import java.sql.*;import java.util.*;import com.smartdesk.util.DBConnection;
+public class HistoryDAO{
+ public void add(int ticket,int user,String action,String oldV,String newV){String s="INSERT INTO ticket_history(ticket_id,user_id,action,old_value,new_value) VALUES(?,?,?,?,?)";try(Connection c=new DBConnection().getConnection();PreparedStatement p=c.prepareStatement(s)){p.setInt(1,ticket);p.setInt(2,user);p.setString(3,action);p.setString(4,oldV);p.setString(5,newV);p.executeUpdate();}catch(Exception e){e.printStackTrace();}}
+ public List<Map<String,String>> get(int id){List<Map<String,String>> l=new ArrayList<>();String s="SELECT h.*,u.name FROM ticket_history h JOIN users u ON h.user_id=u.user_id WHERE ticket_id=? ORDER BY created_at";try(Connection c=new DBConnection().getConnection();PreparedStatement p=c.prepareStatement(s)){p.setInt(1,id);try(ResultSet r=p.executeQuery()){while(r.next()){Map<String,String> m=new HashMap<>();m.put("user",r.getString("name"));m.put("action",r.getString("action"));m.put("old",r.getString("old_value"));m.put("new",r.getString("new_value"));m.put("date",r.getString("created_at"));l.add(m);}}}catch(Exception e){e.printStackTrace();}return l;}
+}

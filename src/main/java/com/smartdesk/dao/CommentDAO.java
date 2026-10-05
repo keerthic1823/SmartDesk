@@ -1,0 +1,6 @@
+package com.smartdesk.dao;
+import java.sql.*;import java.util.*;import com.smartdesk.model.Comment;import com.smartdesk.util.DBConnection;
+public class CommentDAO{
+ public boolean add(Comment x){String s="INSERT INTO ticket_comments(ticket_id,user_id,comment) VALUES(?,?,?)";try(Connection c=new DBConnection().getConnection();PreparedStatement p=c.prepareStatement(s)){p.setInt(1,x.getTicketId());p.setInt(2,x.getUserId());p.setString(3,x.getComment());return p.executeUpdate()>0;}catch(Exception e){e.printStackTrace();return false;}}
+ public List<Comment> get(int id){List<Comment> l=new ArrayList<>();String s="SELECT tc.*,u.name FROM ticket_comments tc JOIN users u ON tc.user_id=u.user_id WHERE ticket_id=? ORDER BY created_at";try(Connection c=new DBConnection().getConnection();PreparedStatement p=c.prepareStatement(s)){p.setInt(1,id);try(ResultSet r=p.executeQuery()){while(r.next()){Comment x=new Comment();x.setCommentId(r.getInt("comment_id"));x.setTicketId(r.getInt("ticket_id"));x.setUserId(r.getInt("user_id"));x.setUserName(r.getString("name"));x.setComment(r.getString("comment"));x.setCreatedAt(r.getString("created_at"));l.add(x);}}}catch(Exception e){e.printStackTrace();}return l;}
+}

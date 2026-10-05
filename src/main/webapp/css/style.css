@@ -1,0 +1,1071 @@
+/* =========================================================
+   SMARTDESK GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --sd-navy: #0f172a;
+
+    --sd-navy-2: #111827;
+
+    --sd-indigo: #4f46e5;
+
+    --sd-indigo-dark: #3730a3;
+
+    --sd-purple: #7c3aed;
+
+    --sd-blue: #2563eb;
+
+    --sd-text: #111827;
+
+    --sd-muted: #64748b;
+
+    --sd-light: #f8fafc;
+
+    --sd-border: #e2e8f0;
+
+    --sd-white: #ffffff;
+
+    --sd-success: #16a34a;
+
+    --sd-danger: #dc2626;
+
+    --sd-warning: #f59e0b;
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    color: var(--sd-text);
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 5% 5%,
+            rgba(99, 102, 241, 0.12),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 95% 15%,
+            rgba(124, 58, 237, 0.10),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #eef2ff 48%,
+            #f8fafc 100%
+        );
+
+}
+
+
+/* =========================================================
+   STICKY SMARTDESK NAVBAR
+   ========================================================= */
+
+.sd-navbar {
+
+    position: sticky !important;
+
+    top: 0;
+
+    z-index: 2000;
+
+    min-height: 72px;
+
+    background:
+        rgba(15, 23, 42, 0.96) !important;
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 8px 30px
+        rgba(15,23,42,.18);
+
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand-logo {
+
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(99,102,241,.35);
+
+}
+
+
+.brand-name {
+
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    letter-spacing: -.5px;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav-link-custom {
+
+    color: #cbd5e1 !important;
+
+    font-weight: 500;
+
+    padding:
+        10px 15px !important;
+
+    border-radius: 11px;
+
+    transition: all .25s ease;
+
+}
+
+
+.nav-link-custom:hover {
+
+    color: white !important;
+
+    background:
+        rgba(255,255,255,.09);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.nav-link-custom.active {
+
+    color: white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,.25),
+            rgba(124,58,237,.20)
+        );
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255,255,255,.06);
+
+}
+
+
+/* =========================================================
+   NAV SEARCH
+   ========================================================= */
+
+.nav-search {
+
+    width: 230px;
+
+    height: 42px;
+
+    padding: 0 15px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    background:
+        rgba(255,255,255,.07);
+
+    color: white;
+
+    outline: none;
+
+}
+
+
+.nav-search::placeholder {
+    color: #94a3b8;
+}
+
+
+.nav-search:focus {
+
+    border-color:
+        rgba(129,140,248,.8);
+
+    background:
+        rgba(255,255,255,.11);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99,102,241,.15);
+
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-avatar {
+
+    width: 39px;
+
+    height: 39px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #4f46e5
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+}
+
+
+.profile-button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 5px 8px;
+
+    border-radius: 12px;
+
+}
+
+
+.profile-button:hover {
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+
+/* =========================================================
+   AUTH PAGES
+   LOGIN / REGISTER
+   ========================================================= */
+
+.auth-page {
+
+    min-height:
+        calc(100vh - 72px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 45px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(99,102,241,.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(124,58,237,.22),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(37,99,235,.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e1b4b 50%,
+            #312e81
+        );
+
+}
+
+
+/* decorative circles */
+
+.auth-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+
+    height: 380px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    top: -180px;
+
+    left: -130px;
+
+}
+
+
+.auth-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    bottom: -250px;
+
+    right: -150px;
+
+}
+
+
+/* =========================================================
+   AUTH LAYOUT
+   ========================================================= */
+
+.auth-wrapper {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.auth-box {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.30);
+
+}
+
+
+/* =========================================================
+   AUTH LEFT PANEL
+   ========================================================= */
+
+.auth-brand-panel {
+
+    position: relative;
+
+    padding: 50px;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(139,92,246,.35),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #111827,
+            #312e81,
+            #4c1d95
+        );
+
+}
+
+
+.auth-brand-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    right: -100px;
+
+    bottom: -100px;
+
+}
+
+
+.auth-brand-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.25);
+
+}
+
+
+.auth-brand-title {
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin-bottom: 16px;
+
+}
+
+
+.auth-brand-text {
+
+    color: #cbd5e1;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+}
+
+
+.auth-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    color: #e2e8f0;
+
+    font-size: 13px;
+
+}
+
+
+.auth-feature i {
+
+    color: #a5b4fc;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   AUTH FORM
+   ========================================================= */
+
+.auth-form-panel {
+
+    padding: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: white;
+
+}
+
+
+.auth-form-title {
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin-bottom: 7px;
+
+}
+
+
+.auth-form-subtitle {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 28px;
+
+}
+
+
+/* =========================================================
+   FORM LABEL
+   ========================================================= */
+
+.form-label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* =========================================================
+   FORM INPUT
+   ========================================================= */
+
+.sd-input,
+.sd-select {
+
+    width: 100%;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        #dbe3ef;
+
+    background: #f8fafc;
+
+    padding:
+        0 14px;
+
+    color: #111827;
+
+    outline: none;
+
+    transition: .2s ease;
+
+}
+
+
+.sd-input:focus,
+.sd-select:focus {
+
+    background: white;
+
+    border-color:
+        #6366f1;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(99,102,241,.10);
+
+}
+
+
+/* textarea */
+
+.sd-textarea {
+
+    min-height: 130px;
+
+    padding-top: 13px;
+
+    resize: vertical;
+
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.sd-primary-btn {
+
+    width: 100%;
+
+    height: 49px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(79,70,229,.25);
+
+    transition: .25s ease;
+
+}
+
+
+.sd-primary-btn:hover {
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(79,70,229,.35);
+
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.sd-alert {
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   DASHBOARD GENERAL
+   ========================================================= */
+
+.dashboard-container {
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding:
+        32px 28px 50px;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 45px;
+
+    border-radius: 26px;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(139,92,246,.35),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111827,
+            #312e81 55%,
+            #4c1d95
+        );
+
+    box-shadow:
+        0 25px 60px
+        rgba(49,46,129,.20);
+
+}
+
+
+.hero-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    right: 70px;
+
+    top: -120px;
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.hero-title {
+
+    font-size:
+        clamp(30px, 4vw, 46px);
+
+    font-weight: 800;
+
+    margin-top: 20px;
+
+}
+
+
+.hero-description {
+
+    max-width: 700px;
+
+    color: #cbd5e1;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.stat-card {
+
+    background:
+        rgba(255,255,255,.95);
+
+    border:
+        1px solid
+        var(--sd-border);
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(15,23,42,.05);
+
+    transition: .25s ease;
+
+}
+
+
+.stat-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(15,23,42,.10);
+
+    border-color:
+        #c7d2fe;
+
+}
+
+
+/* =========================================================
+   CONTENT CARDS
+   ========================================================= */
+
+.content-card,
+.profile-card {
+
+    background:
+        rgba(255,255,255,.95);
+
+    border:
+        1px solid
+        var(--sd-border);
+
+    border-radius: 22px;
+
+    padding: 26px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(15,23,42,.045);
+
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+
+    transition: .2s ease;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .auth-box {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .auth-brand-panel {
+
+        padding: 35px;
+
+        min-height: 300px;
+
+    }
+
+    .auth-form-panel {
+
+        padding: 35px;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .auth-page {
+
+        padding: 20px 12px;
+
+    }
+
+    .auth-brand-panel {
+
+        display: none;
+
+    }
+
+    .auth-form-panel {
+
+        padding: 30px 22px;
+
+    }
+
+    .auth-box {
+
+        min-height: auto;
+
+        border-radius: 20px;
+
+    }
+
+    .dashboard-container {
+
+        padding:
+            20px 14px 35px;
+
+    }
+
+    .hero-section {
+
+        padding: 30px 22px;
+
+        border-radius: 20px;
+
+    }
+
+    .nav-search {
+
+        display: none;
+
+    }
+
+}
